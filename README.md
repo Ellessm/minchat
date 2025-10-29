@@ -4,12 +4,20 @@
 
 Minchat - Creates a database and webui for user management and chat history that can allow multiple concurrent users to chat with a locally installed LLM on llama.cpp.
 
-PREREQUISITES:  
+
+
+**PREREQUISITES:**  
+
 -llama.cpp installed globally.
+
 -an LLM in .gguf format (update .env file with appropriate model file name and directory).
 
-TO RUN APPLICATION:
+
+
+**TO RUN APPLICATION:**
+
 -clone repo
+
 -in Terminal, change directory to minchat and run:
 
     ./start_llama_server.sh
