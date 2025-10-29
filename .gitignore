@@ -1,0 +1,4 @@
+models/
+frontend/node_modules/
+venv/
+minchat.db
