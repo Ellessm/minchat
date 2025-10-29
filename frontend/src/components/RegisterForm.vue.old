@@ -1,0 +1,30 @@
+<template>
+  <div>
+    <h2>Register</h2>
+    <form @submit.prevent="register">
+      <input v-model="username" placeholder="Username" />
+      <input v-model="password" type="password" placeholder="Password" />
+      <button>Register</button>
+    </form>
+  </div>
+</template>
+
+<script setup>
+import { ref } from "vue";
+import axios from "axios";
+
+const username = ref("");
+const password = ref("");
+
+async function register() {
+  try {
+    await axios.post("http://localhost:8000/auth/register", {
+      username: username.value,
+      password: password.value,
+    });
+    alert("Registration successful!");
+  } catch (err) {
+    alert("Registration failed");
+  }
+}
+</script>

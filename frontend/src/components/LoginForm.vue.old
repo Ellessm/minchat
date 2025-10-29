@@ -1,0 +1,28 @@
+<template>
+  <div class="login">
+    <h2>Login</h2>
+    <form @submit.prevent="login">
+      <input v-model="username" placeholder="Username" />
+      <input v-model="password" type="password" placeholder="Password" />
+      <button>Login</button>
+    </form>
+    <p>Don't have an account? <router-link to="/register">Register</router-link></p>
+  </div>
+</template>
+
+<script setup>
+import axios from "axios";
+import { useRouter } from "vue-router";
+const router = useRouter();
+const username = ref("");
+const password = ref("");
+
+async function login() {
+  try {
+    await axios.post("http://localhost:8000/auth/login", { username: username.value, password: password.value });
+    router.push(`/chat/${username.value}`);
+  } catch (err) {
+    alert("Login failed");
+  }
+}
+</script>
