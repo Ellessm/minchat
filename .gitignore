@@ -2,3 +2,4 @@ frontend/node_modules/
 venv/
 minchat.db
 gemma-2-9b-it-Q6_K_L.gguf
+.DS_Store
